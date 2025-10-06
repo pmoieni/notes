@@ -38,3 +38,4 @@ slice of bytes with a maximum length of path MTU (usually 1200, sometimes 1500) 
 - `sendDatagram([]byte)`: Enqueues a datagram to be sent to the peer. potentially resulting in the datagram being dropped if the queue is full.
 - `receiveDatagram([]byte)`: Dequeues an incoming datagram, if one is available.
 - `getMTUD() uint`: Returns the largest size of the datagram that a WebTransport session is expected to be able to send.
+
