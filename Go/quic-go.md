@@ -32,7 +32,7 @@ slice of bytes with a maximum length of path MTU (usually 1200, sometimes 1500) 
 - all of the outgoing and incoming datagrams
    are placed into a size-bound queue (similar to a network interface
    card queue) 
-   > note: figure out what NIC queues are
+> note: figure out what NIC queues are
 
 ## session protocol features
 - `sendDatagram([]byte)`: Enqueues a datagram to be sent to the peer. potentially resulting in the datagram being dropped if the queue is full.
