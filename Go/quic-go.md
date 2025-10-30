@@ -65,3 +65,18 @@ slice of bytes with a maximum length of path MTU (usually 1200, sometimes 1500) 
       all data has been received and acknowledged by the peer,
       corresponding to the "Data Recvd" state in QUIC; see Section 3.1
       of [QUIC].
+
+## webtransport datagram spec
+
+A total of 8 bytes in the header:
+- first 2 bytes is the type: `webTransportUniStreamType(0x54) / webTransportFrameType(0x41)`
+- next 6 bytes for the session ID: `w(http3.HTTPStreamer).HTTPStream().StreamID()`
+
+
+
+TODO:
+- check if tracing ID exists
+	- true: check if session ID exists
+		- true: add stream to session
+		- false: create new session and add stream to it
+	- false: create new tracing ID and set in header, then create new session and add stream to session
